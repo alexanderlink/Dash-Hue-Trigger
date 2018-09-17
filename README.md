@@ -19,6 +19,11 @@ connecting to your wifi. Because of that it only works with Python 2.7.
 If you want to trigger the webhook you also need requests, the mail
 part uses smtplib.
 
+Install python dependencies:   
+```shell
+pip install -r requirements.txt
+```
+
 The script probably needs root-privileges:
 ```shell
 sudo python2 listen.py
