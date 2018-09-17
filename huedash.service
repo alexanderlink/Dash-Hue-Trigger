@@ -1,0 +1,16 @@
+[Unit]
+Description=Hue Dash
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/Dash-Hue-Trigger
+User=root
+Group=root
+ExecStart=/home/pi/Dash-Hue-Trigger/start.sh
+ExecStop=
+Restart=always
+SyslogIdentifier=HueDash
+
+[Install]
+WantedBy=multi-user.target

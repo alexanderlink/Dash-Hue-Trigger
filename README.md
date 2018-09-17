@@ -21,7 +21,8 @@ part uses smtplib.
 
 Install python dependencies:   
 ```shell
-pip install -r requirements.txt
+sudo apt-get install python-pip
+sudo pip install -r requirements.txt
 ```
 
 The script probably needs root-privileges:
