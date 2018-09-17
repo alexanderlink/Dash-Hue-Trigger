@@ -1,6 +1,5 @@
 
 Forked from [https://github.com/alexanderlink/dashbutton.git](https://github.com/alexanderlink/dashbutton.git).   
-File `alexa_remote_control.sh` from [https://blog.loetzimmer.de/2017/10/amazon-alexa-hort-auf-die-shell-echo.html](https://blog.loetzimmer.de/2017/10/amazon-alexa-hort-auf-die-shell-echo.html)   
 
 # Amazon Dash button
 The script `listen.py` registers ARP-packets in the local network. 
