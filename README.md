@@ -1,4 +1,4 @@
-# Trigger Philips Hue from an Amazon Dash Button via Raspberry Pi
+# Trigger Philips Hue from an Amazon Dash Button
 
 This project is based on
 - [**pinae/dashbutton**](https://github.com/pinae/dashbutton) &ndash; a python script to listen to Amazon Dash buttons
