@@ -37,3 +37,6 @@ The script probably needs root-privileges:
 ```shell
 sudo python2 listen.py
 ```
+
+## Setup Service
+To run the script as service [see here](huedash-service-readme.md)
