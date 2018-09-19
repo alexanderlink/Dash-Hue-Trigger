@@ -25,6 +25,8 @@ connecting to your wifi. Because of that it only works with Python 2.7.
 If you want to trigger the webhook you also need requests, the mail
 part uses smtplib.
 
+:warning: To prevent the Dash button orders stuff all the time you have to block Internet access for the Dash button in your router once it is registered properly. This will block communication with Amazon, still the event is recognized by the raspi in your network.
+
 Install python dependencies via pip:   
 ```shell
 # Install pip
