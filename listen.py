@@ -6,6 +6,7 @@ from phue import Bridge
 
 def arp_received(packet):
     if packet[ARP].op == 1 and packet[ARP].hwdst == '00:00:00:00:00:00':
+        # Replace the Dash button addresses with yours
         if packet[ARP].hwsrc.upper() == 'FC:65:DE:81:25:74':  # Pampers
             print("Pampers Button pressed!")
             setHueWickelnStart()
@@ -17,6 +18,8 @@ def arp_received(packet):
             print("Finish Button pressed!")
             setHueWickelnStop()
 
+# Replace the Hue light names with yours and implement the desired logic.
+# initHue() below prints the list of lights.
 def setHueWickelnStart():
     print("Hue Wickeln Start")
     b = initHue()
@@ -46,7 +49,7 @@ def setHueWickelnStop():
     b.set_light('Küche Lightstrip', 'on', False)
 
 def initHue():
-    b = Bridge('192.168.178.39')
+    b = Bridge('192.168.178.39') # Replace with the IP of your Hue Bridge
     b.connect()
     b.get_api()
     lights = b.lights
