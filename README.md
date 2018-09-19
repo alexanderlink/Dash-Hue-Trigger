@@ -6,6 +6,7 @@ This project is based on
 
 The script on a Raspberry Pi reacts when the Amazon Dash button is pressed, communicates with the Philips Hue Bridge and activates/deactivates specific lights, sets the brightness level, etc.
 
+Here you find an [**example video**](https://www.youtube.com/watch?v=MSXT9lLoVYw).
 
 ## Amazon Dash button
 The script `listen.py` registers ARP-packets in the local network. 
