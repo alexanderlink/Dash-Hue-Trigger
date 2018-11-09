@@ -11,18 +11,19 @@ def arp_received(packet):
         # Replace the Dash button addresses with yours
         if packet[ARP].hwsrc.upper() == 'FC:65:DE:81:25:74':  # Pampers
             print("Pampers Button pressed!")
-            toggle()
+            toggleOnOff()
 
         elif packet[ARP].hwsrc.upper() == '50:F5:DA:3B:1B:30':  # Finish
             print("Finish Button pressed!")
-            toggle()
+            toggleOnOff()
 
         elif packet[ARP].hwsrc.upper() == 'FC:A6:67:B9:B8:75':  # Durex
             print("Durex Button pressed!")
+            switchBrightness()
 
 
-def toggle():
-    print("toggle lights")
+def toggleOnOff():
+    print("toggleOnOff")
     global last_state
     if last_state == 'off':
         setOn()
@@ -60,6 +61,34 @@ def setOff():
     b.set_light('Küche Decke', 'on', False)
     b.set_light('Küche Lightstrip', 'bri', 255)
     b.set_light('Küche Lightstrip', 'on', False)
+
+
+def switchBrightness():
+    print "switchBrightness"
+    b = initHue()
+    curBri = b.get_light('Wohnzimmer Decke')['state']['bri']
+    print "current brightness: " + str(curBri)
+    if curBri > 200:
+        b.set_light('Wohnzimmer Decke', 'bri', 5)
+        b.set_light('Wohnzimmer Farbe', 'bri', 5)
+        b.set_light('Wohnzimmer Tür', 'bri', 5)
+        b.set_light('Flur 1', 'bri', 5)
+        b.set_light('Flur 2', 'bri', 5)
+        b.set_light('Flur 3', 'bri', 5)
+        b.set_light('Flur 4', 'bri', 5)
+        b.set_light('Küche Decke', 'bri', 5)
+        b.set_light('Küche Lightstrip', 'bri', 5)
+    else:
+        b.set_light('Wohnzimmer Decke', 'bri', 255)
+        b.set_light('Wohnzimmer Farbe', 'bri', 255)
+        b.set_light('Wohnzimmer Tür', 'bri', 255)
+        b.set_light('Flur 1', 'bri', 255)
+        b.set_light('Flur 2', 'bri', 255)
+        b.set_light('Flur 3', 'bri', 255)
+        b.set_light('Flur 4', 'bri', 255)
+        b.set_light('Küche Decke', 'bri', 255)
+        b.set_light('Küche Lightstrip', 'bri', 255)
+
 
 def initHue():
     b = Bridge('192.168.178.39') # Replace with the IP of your Hue Bridge
